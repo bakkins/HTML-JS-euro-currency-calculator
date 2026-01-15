@@ -14,10 +14,22 @@ const resultText = document.querySelector("h2")
 
 convertButton.addEventListener("click", convert)
 
-function convert() {
-    let sellValue = parseFloat(sellInput.value)
+sellInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        convert();
+    }
+});
 
-    resultText.innerHTML = `${sellValue} ${currencySellSelector.value} = ${baseRates[currencySellSelector.value][currencyBuySelector.value] * sellValue} ${currencyBuySelector.value} `
-    sellInput.value = ""
-    sellInput.focus
+function convert() {
+    if (sellInput.value === ""){
+        alert("Invalid input")
+        return;
+    }
+    else {
+        let sellValue = parseFloat(sellInput.value)
+
+        resultText.innerHTML = `${sellValue} ${currencySellSelector.value} = ${baseRates[currencySellSelector.value][currencyBuySelector.value] * sellValue} ${currencyBuySelector.value} `
+        sellInput.value = ""
+        sellInput.focus()
+    }
 }
