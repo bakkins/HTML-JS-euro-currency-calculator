@@ -5,3 +5,9 @@ USD: { EUR: 0.92, GBP: 0.79, USD: 1.00, CHF: 0.97, SEK:10.48 },
 CHF: { EUR: 0.94, GBP: 0.81, USD: 1.03, CHF: 1.00, SEK:10.80 },
 SEK: { EUR: 0.087, GBP: 0.075, USD: 0.095, CHF: 0.093, SEK: 1.00 }
 };
+
+const currencySelector = document.getElementById("currency-select")
+const eurInput = document.getElementById("eur")
+const convertButton = document.querySelector("button")
+const resultText = document.querySelector("h2")
+
