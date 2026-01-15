@@ -8,15 +8,16 @@ const baseRates = {
 
 const currencySellSelector = document.getElementById("currency-sell-select")
 const currencyBuySelector = document.getElementById("currency-buy-select")
-const eurInput = document.getElementById("eur")
+const sellInput = document.getElementById("sell")
 const convertButton = document.querySelector("button")
 const resultText = document.querySelector("h2")
 
 convertButton.addEventListener("click", convert)
 
 function convert() {
-    let eurValue = parseFloat(eurInput.value)
-    resultText.innerHTML = `${eurValue} EUR = ${baseRates.EUR[currencySelector.value] * eurValue} `
-    eurInput.value = ""
-    eurInput.focus
+    let sellValue = parseFloat(sellInput.value)
+
+    resultText.innerHTML = `${sellValue} ${currencySellSelector.value} = ${baseRates[currencySellSelector.value][currencyBuySelector.value] * sellValue} ${currencyBuySelector.value} `
+    sellInput.value = ""
+    sellInput.focus
 }
