@@ -6,7 +6,8 @@ const baseRates = {
     SEK: { EUR: 0.087, GBP: 0.075, USD: 0.095, CHF: 0.093, SEK: 1.00 }
 };
 
-const currencySelector = document.getElementById("currency-select")
+const currencySellSelector = document.getElementById("currency-sell-select")
+const currencyBuySelector = document.getElementById("currency-buy-select")
 const eurInput = document.getElementById("eur")
 const convertButton = document.querySelector("button")
 const resultText = document.querySelector("h2")
